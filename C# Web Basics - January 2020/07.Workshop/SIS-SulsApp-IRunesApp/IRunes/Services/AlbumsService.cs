@@ -28,11 +28,23 @@ namespace IRunes.Services
             this.db.SaveChanges();
         }
 
+        //first type
         public IEnumerable<T> GetAll<T>(Func<Album, T> selectFunc)
         {
             var allAlbums = this.db.Albums.Select(selectFunc).ToList();
             return allAlbums;
         }
+        //second type
+        //public IEnumerable<AlbumInfoViewModel> GetAll()
+        //{
+        //    var allAlbums = this.db.Albums.Select(x => new AlbumInfoViewModel 
+        //    {
+        //        Id = x.Id,
+        //        Name = x.Name,
+        //    }).
+        //    ToList();
+        //    return allAlbums;
+        //}
 
         public AlbumDetailsViewModel GetDetails(string id)
         {

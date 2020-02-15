@@ -26,11 +26,14 @@ namespace IRunes.Controllers
 
             var viewModel = new AllAlbumsViewModel
             {
+                //first type
                 Albums = this.albumsService.GetAll(x => new AlbumInfoViewModel
                 {
                     Id = x.Id,
                     Name = x.Name,
                 }),
+                //second type
+                //Albums = this.albumsService.GetAll(),
             };
             return this.View(viewModel);
         }
